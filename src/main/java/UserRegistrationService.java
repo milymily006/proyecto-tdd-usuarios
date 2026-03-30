@@ -2,12 +2,12 @@ public class UserRegistrationService {
 
     public String register(String username, String password, String email, Integer age) {
 
-        //if (username == null || username.isBlank() ||
-          //      password == null || password.isBlank() ||
-            //    email    == null || email.isBlank()    ||
-              //  age      == null) {
-          //  return "Debe completar todos los campos requeridos";
-       //git }
+        if (username == null || username.isBlank() ||
+               password == null || password.isBlank() ||
+                email    == null || email.isBlank()    ||
+               age      == null) {
+           return "Debe completar todos los campos requeridos";
+            }
 
         // COMENTADO PARA RED
          if (!username.matches("[a-zA-Z0-9]{6,12}")) {
