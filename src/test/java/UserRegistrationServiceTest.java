@@ -17,5 +17,12 @@ class UserRegistrationServiceTest {
         String result = service.register("juan123", "clave1234", "juan@email.com", 25);
         assertEquals("El usuario ha sido registrado correctamente", result);
     }
+    // Test 2 — Nombre de usuario inválido (menos de 6 caracteres)
+    @Test
+    void testNombreUsuarioInvalido() {
+        String result = service.register("abc", "clave1234", "juan@email.com", 25);
+        assertEquals("El nombre de usuario no es válido", result);
+    }
+
 
 }
