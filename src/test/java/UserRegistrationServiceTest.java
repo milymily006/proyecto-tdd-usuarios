@@ -29,6 +29,12 @@ class UserRegistrationServiceTest {
         String result = service.register("juan123", "sololetras", "juan@email.com", 25);
         assertEquals("La contraseña debe tener al menos 8 caracteres y contener letras y números", result);
     }
+    // Test 4 — Correo inválido (sin '@')
+    @Test
+    void testCorreoInvalido() {
+        String result = service.register("juan123", "clave1234", "correoinvalido", 25);
+        assertEquals("Ingrese un correo electrónico válido", result);
+    }
 
 
 
