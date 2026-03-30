@@ -41,7 +41,12 @@ class UserRegistrationServiceTest {
         String result = service.register("juan123", "clave1234", "juan@email.com", 16);
         assertEquals("Debe ser mayor de edad para registrarse", result);
     }
-
+    // Test 6 — Campo vacío
+    @Test
+    void testCampoVacio() {
+        String result = service.register("", "clave1234", "juan@email.com", 25);
+        assertEquals("Debe completar todos los campos requeridos", result);
+    }
 
 
 }
