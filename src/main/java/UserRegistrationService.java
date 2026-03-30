@@ -24,9 +24,9 @@ public class UserRegistrationService {
             return "Ingrese un correo electrónico válido";
         }
 
-        if (age < 18) {
-            return "Debe ser mayor de edad para registrarse";
-        }
+        //if (age < 18) {
+          //  return "Debe ser mayor de edad para registrarse";
+       // }
 
         return "El usuario ha sido registrado correctamente";
     }
