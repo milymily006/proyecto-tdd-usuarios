@@ -20,9 +20,9 @@ public class UserRegistrationService {
             return "La contraseña debe tener al menos 8 caracteres y contener letras y números";
         }
 
-        //if (!email.contains("@") || email.length() < 8) {
-           // return "Ingrese un correo electrónico válido";
-        //}
+        if (!email.contains("@") || email.length() < 8) {
+            return "Ingrese un correo electrónico válido";
+        }
 
         if (age < 18) {
             return "Debe ser mayor de edad para registrarse";
