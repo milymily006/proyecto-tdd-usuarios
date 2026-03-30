@@ -23,6 +23,13 @@ class UserRegistrationServiceTest {
         String result = service.register("abc", "clave1234", "juan@email.com", 25);
         assertEquals("El nombre de usuario no es válido", result);
     }
+    // Test 3 — Contraseña inválida (sin números)
+    @Test
+    void testContrasenaInvalida() {
+        String result = service.register("juan123", "sololetras", "juan@email.com", 25);
+        assertEquals("La contraseña debe tener al menos 8 caracteres y contener letras y números", result);
+    }
+
 
 
 }
