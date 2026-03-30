@@ -14,11 +14,11 @@ public class UserRegistrationService {
              return "El nombre de usuario no es válido";
          }
 
-        //if (password.length() < 8 ||
-          //      !password.matches(".*[a-zA-Z].*") ||
-            //    !password.matches(".*[0-9].*")) {
-           // return "La contraseña debe tener al menos 8 caracteres y contener letras y números";
-       // }
+        if (password.length() < 8 ||
+                !password.matches(".*[a-zA-Z].*") ||
+               !password.matches(".*[0-9].*")) {
+            return "La contraseña debe tener al menos 8 caracteres y contener letras y números";
+        }
 
         if (!email.contains("@") || email.length() < 8) {
             return "Ingrese un correo electrónico válido";
