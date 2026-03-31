@@ -43,4 +43,21 @@ class OrderServiceTest {
         verify(customerRepo).isActive("C001");
         verify(productRepo).getStock("P001");
     }
+    @Test
+    void testOrdenCanceladaCuandoSinStock() {
+        when(customerRepo.existsById("C002")).thenReturn(true);
+        when(customerRepo.isActive("C002")).thenReturn(true);
+        when(productRepo.getStock("P002")).thenReturn(0);
+
+        Map<String, Double>  products   = Map.of("P002", 100.0);
+        Map<String, Integer> quantities = Map.of("P002", 1);
+
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> orderService.registerOrder("C002", products, quantities)
+        );
+        assertEquals("Sin stock para producto P002", ex.getMessage());
+
+        verify(productRepo).getStock("P002");
+    }
 }

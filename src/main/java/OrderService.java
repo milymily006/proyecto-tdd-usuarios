@@ -30,8 +30,8 @@ public class OrderService {
             if (qty == null || qty <= 0)
                 throw new IllegalArgumentException("Cantidad inválida para producto " + pid);
 
-            if (productRepo.getStock(pid) < qty)
-                throw new IllegalArgumentException("Sin stock para producto " + pid);
+            //if (productRepo.getStock(pid) < qty)
+               // throw new IllegalArgumentException("Sin stock para producto " + pid);
         }
 
         double total = 0;
